@@ -3,9 +3,13 @@
 # Define the installation directory
 INSTALL_DIR="/usr/local/bin"
 
+# Compiling the Rust project
+echo "Compiling SimplePrint..."
+cargo build --release
+
 # Check if the build was successful
 if [ ! -f target/release/simpleprint ]; then
-    echo "Build failed, cannot install. Please run build.sh first."
+    echo "Build failed, cannot install."
     exit 1
 fi
 
